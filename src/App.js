@@ -14,7 +14,6 @@ import CookiePolicy from './pages/Cookiepolicy';
 import ProtectedAdminRoute from './components/ProtectedAdminRoute';
 import SuperAdminDashboard from './pages/admin/SuperAdminDashboard';
 import PropertyDetail from './pages/PropertyDetail';
-import { trackPropertyView } from './services/analyticsService';
 import HowItWorks from './pages/Howitworks';
 
 
@@ -42,7 +41,7 @@ const PublicRoute = ({ children }) => {
 };
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
 
   useEffect(() => {
     // Check if user is authenticated on mount
