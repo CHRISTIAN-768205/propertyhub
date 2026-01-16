@@ -18,6 +18,7 @@ import HowItWorks from './pages/Howitworks';
 
 
 
+
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
@@ -41,7 +42,7 @@ const PublicRoute = ({ children }) => {
 };
 
 function App() {
-  
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     // Check if user is authenticated on mount
