@@ -93,9 +93,11 @@ export default function AuthPages() {
     setErrors({});
 
     try {
-      const endpoint = isLogin 
-        ? 'http://localhost:5000/api/auth/login' 
-        : 'http://localhost:5000/api/auth/register';
+     const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+const endpoint = isLogin 
+  ? `${API_URL}/api/auth/login` 
+  : `${API_URL}/api/auth/register`;
   
       const response = await fetch(endpoint, {
         method: 'POST',
