@@ -6,8 +6,18 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// ✅ CORS - Allow Netlify frontend
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://propertyhab.netlify.app/',
+    'https://*.netlify.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -24,8 +34,6 @@ const analyticsRoutes = require('./routes/analytics');
 const subscriptionRoutes = require('./routes/subscriptionRoutes');
 const paymentRoutes = require('./routes/Paymentroutes');
 
-
-
 app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertyRoutes);
 app.use('/api/bookings', bookingRoutes);
@@ -34,7 +42,6 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
 app.use('/api/payments', paymentRoutes);
-
 
 // Health check route
 app.get('/api/health', (req, res) => {
