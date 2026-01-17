@@ -42,18 +42,18 @@ const PublicRoute = ({ children }) => {
 };
 
 function App() {
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     // Check if user is authenticated on mount
     const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token);
+    // setIsAuthenticated(!!token);
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    setIsAuthenticated(false);
+   // setIsAuthenticated(false);
     window.location.href = '/login';
   };
 
