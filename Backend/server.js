@@ -10,7 +10,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://propertyhab.netlify.app/',
+    'https://propertyhab.netlify.app',  
     'https://*.netlify.app'
   ],
   credentials: true,
