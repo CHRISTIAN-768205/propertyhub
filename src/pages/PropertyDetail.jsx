@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API_URL from '../config/api';
 import { useParams } from 'react-router-dom';
-import API_URL from '../config/api';
 import { Phone, Mail, MessageCircle, MapPin, Bed, Bath, Home } from 'lucide-react';
-import API_URL from '../config/api';
 
 const PropertyDetail = () => {
   const { id: propertyId } = useParams(); // Get property ID from URL
@@ -171,4 +169,5 @@ const PropertyDetail = () => {
 };
 
 export default PropertyDetail;
+
 

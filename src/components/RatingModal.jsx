@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import API_URL from '../config/api';
 import { Star, X } from 'lucide-react';
-import API_URL from '../config/api';
 
 export default function RatingModal({ property, onClose, onSubmit }) {
   const [rating, setRating] = useState(0);
@@ -185,4 +184,5 @@ export default function RatingModal({ property, onClose, onSubmit }) {
     </div>
   );
 }
+
 

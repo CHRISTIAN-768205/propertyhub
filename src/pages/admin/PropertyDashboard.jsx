@@ -7,9 +7,7 @@ import {
   Building2, Shirt, UtensilsCrossed, Zap, TrendingUp
 } from 'lucide-react';
 import DeleteAccountSection from '../../components/DeleteAccountSection';
-import API_URL from '../../config/api';
 import PropertyEditModal from './Propertyeditmodal';
-import API_URL from '../../config/api';  // Adjust path as needed
 
 export default function PropertyDashboard() {
   // ALL STATE
@@ -1038,4 +1036,5 @@ function PropertyAnalyticsDetail({ propertyId }) {
     </div>
   );
 }
+
 

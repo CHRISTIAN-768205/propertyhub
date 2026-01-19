@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API_URL from '../../config/api';
 import { X, Camera, MapPin } from 'lucide-react';
-import API_URL from '../../config/api';
 import { 
   Wifi, Car, Wind, Shield, Dumbbell, Waves, Dog, Sofa, Trees, 
   Building2, Shirt, UtensilsCrossed, Zap 
@@ -451,4 +450,5 @@ export default function PropertyEditModal({ property, onClose, onSuccess }) {
     </div>
   );
 }
+
 

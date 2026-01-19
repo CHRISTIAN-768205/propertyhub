@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import API_URL from '../config/api';
 import { X, MapPin, DollarSign, Star, Bed, Bath, Check, Minus } from 'lucide-react';
-import API_URL from '../config/api';
 
 export default function PropertyComparison({ properties, onClose }) {
   const [selectedProperties, setSelectedProperties] = useState([]);
@@ -353,4 +352,5 @@ export default function PropertyComparison({ properties, onClose }) {
     </div>
   );
 }
+
 

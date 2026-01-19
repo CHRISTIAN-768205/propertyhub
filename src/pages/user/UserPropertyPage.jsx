@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import API_URL from '../../config/api';
 import { Search, MapPin, DollarSign, Heart, Star, Filter, Phone, Mail, Calendar, Wifi, Car, Wind, User, LogIn, Camera, Shield, Dumbbell, Waves, Dog, Sofa, Trees, Building2, Shirt, UtensilsCrossed, Zap, Bed, Bath, Moon, Sun } from 'lucide-react';
-import API_URL from '../../config/api';
 import PropertyComparison from '../../components/PropertyComparison';
-import API_URL from '../../config/api';
 import { GitCompare } from 'lucide-react';
-import API_URL from '../../config/api';
 import RatingModal from '../../components/RatingModal';
-import API_URL from '../../config/api';
 import LocationSearch, { 
   calculateDistance, 
   DistanceBadge, 
   RoutePlannerButton 
 } from '../../components/LocationSearch';
 import Footer from '../../components/Footer';
-import API_URL from '../../config/api';
 import PaymentModal from '../../components/PaymentModal';
-import API_URL from '../../config/api';
 
 export default function UserPropertyPage(){
   const [showRatingModal, setShowRatingModal] = useState(false);
@@ -851,4 +845,5 @@ const [currentBooking, setCurrentBooking] = useState(null);
 
   );
 }
+
 
