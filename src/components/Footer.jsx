@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import API_URL from '../config/api';
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Heart, Shield, CheckCircle } from 'lucide-react';
+import API_URL from '../config/api';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -215,4 +217,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 

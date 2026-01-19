@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import API_URL from '../../config/api';
 import { useNavigate } from 'react-router-dom';
+import API_URL from '../../config/api';
 import { Mail, Lock, User, Phone, Home, Eye, EyeOff, Shield } from 'lucide-react';
+import API_URL from '../../config/api';
 
 export default function AuthPages() {
   const navigate = useNavigate();
@@ -571,4 +574,5 @@ const endpoint = isLogin
     </div>
   );
 }
+
 

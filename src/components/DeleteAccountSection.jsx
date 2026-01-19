@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import API_URL from '../config/api';
 import { Trash2, AlertTriangle, X } from 'lucide-react';
+import API_URL from '../config/api';
 
 const DeleteAccountSection = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -110,4 +112,5 @@ const DeleteAccountSection = () => {
 };
 
 export default DeleteAccountSection;
+
 

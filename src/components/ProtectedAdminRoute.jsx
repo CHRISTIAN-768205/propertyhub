@@ -1,6 +1,8 @@
 // src/components/ProtectedAdminRoute.jsx
 import React, { useEffect, useState } from 'react';
+import API_URL from '../config/api';
 import { Navigate } from 'react-router-dom';
+import API_URL from '../config/api';
 
 const ProtectedAdminRoute = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState(null);
@@ -60,4 +62,5 @@ const ProtectedAdminRoute = ({ children }) => {
 };
 
 export default ProtectedAdminRoute;
+
 
