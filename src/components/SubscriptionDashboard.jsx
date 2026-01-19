@@ -16,7 +16,7 @@ export default function SubscriptionDashboard() {
   const fetchSubscription = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/subscriptions/current', {
+      const response = await fetch('${API_URL}/api/subscriptions/current', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -31,7 +31,7 @@ export default function SubscriptionDashboard() {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/bookings/commissions/stats', {
+      const response = await fetch('${API_URL}/api/bookings/commissions/stats', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -44,7 +44,7 @@ export default function SubscriptionDashboard() {
   const handleUpgrade = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/subscriptions/upgrade', {
+      const response = await fetch('${API_URL}/api/subscriptions/upgrade', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

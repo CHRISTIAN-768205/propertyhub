@@ -103,7 +103,7 @@ const [currentBooking, setCurrentBooking] = useState(null);
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/properties');
+      const response = await fetch('${API_URL}/api/properties');
       const data = await response.json();
       setProperties(data);
     } catch (error) {
@@ -184,7 +184,7 @@ const [currentBooking, setCurrentBooking] = useState(null);
     e.preventDefault();
     
     try {
-      const response = await fetch('http://localhost:5000/api/bookings', {
+      const response = await fetch('${API_URL}/api/bookings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -289,7 +289,7 @@ const [currentBooking, setCurrentBooking] = useState(null);
   // Track property view
   const trackPropertyView = async (propertyId) => {
     try {
-      await fetch(`http://localhost:5000/api/analytics/track-view/${propertyId}`, {
+      await fetch(`${API_URL}/api/analytics/track-view/${propertyId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -525,7 +525,7 @@ const [currentBooking, setCurrentBooking] = useState(null);
                   {/* IMAGE SECTION */}
                   <div className="relative group">
                     <img
-                      src={`http://localhost:5000${mainImage}`}
+                      src={`${API_URL}${mainImage}`}
                       alt={property.title}
                       className="w-full h-56 object-cover cursor-pointer"
                       onClick={() => {

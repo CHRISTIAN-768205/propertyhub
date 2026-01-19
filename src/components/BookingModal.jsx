@@ -19,7 +19,7 @@ export default function BookingModal({ property, onClose, onBook }) {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/bookings/create', {
+      const response = await fetch('${API_URL}/api/bookings/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

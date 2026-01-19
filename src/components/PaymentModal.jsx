@@ -40,7 +40,7 @@ export default function PaymentModal({ booking, onClose, onPaymentComplete }) {
       });
 
       // Initiate payment
-      const response = await fetch(`http://localhost:5000/api/payments/${booking._id}/initiate-payment`, {
+      const response = await fetch(`${API_URL}/api/payments/${booking._id}/initiate-payment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ export default function PaymentModal({ booking, onClose, onPaymentComplete }) {
       attempts++;
 
       try {
-        const response = await fetch(`http://localhost:5000/api/payments/${bookingId}/payment-status`);
+        const response = await fetch(`${API_URL}/api/payments/${bookingId}/payment-status`);
         const data = await response.json();
 
         if (data.success && data.payment.status === 'paid') {

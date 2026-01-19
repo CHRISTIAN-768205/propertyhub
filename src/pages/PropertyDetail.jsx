@@ -14,7 +14,7 @@ const PropertyDetail = () => {
       fetchProperty();
       
       // Track view
-      fetch(`http://localhost:5000/api/analytics/track/view/${propertyId}`, {
+      fetch(`${API_URL}/api/analytics/track/view/${propertyId}`, {
         method: 'POST'
       }).catch(err => console.error('Track view error:', err));
     }
@@ -22,7 +22,7 @@ const PropertyDetail = () => {
 
   const fetchProperty = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/properties/${propertyId}`);
+      const response = await fetch(`${API_URL}/api/properties/${propertyId}`);
       const data = await response.json();
       setProperty(data);
       setLoading(false);
@@ -34,7 +34,7 @@ const PropertyDetail = () => {
 
   // ✅ TRACK PHONE CLICK
   const handlePhoneClick = async () => {
-    await fetch(`http://localhost:5000/api/analytics/track/click/${propertyId}`, {
+    await fetch(`${API_URL}/api/analytics/track/click/${propertyId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type: 'phone' })
@@ -46,7 +46,7 @@ const PropertyDetail = () => {
 
   // ✅ TRACK EMAIL CLICK
   const handleEmailClick = async () => {
-    await fetch(`http://localhost:5000/api/analytics/track/click/${propertyId}`, {
+    await fetch(`${API_URL}/api/analytics/track/click/${propertyId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type: 'email' })
@@ -58,7 +58,7 @@ const PropertyDetail = () => {
 
   // ✅ TRACK WHATSAPP CLICK
   const handleWhatsAppClick = async () => {
-    await fetch(`http://localhost:5000/api/analytics/track/click/${propertyId}`, {
+    await fetch(`${API_URL}/api/analytics/track/click/${propertyId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type: 'whatsapp' })

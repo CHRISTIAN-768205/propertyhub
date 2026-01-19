@@ -99,7 +99,7 @@ export default function PropertyComparison({ properties, onClose }) {
                     )}
                     
                     <img
-                      src={`http://localhost:5000${mainImage}`}
+                      src={`${API_URL}${mainImage}`}
                       alt={property.title}
                       className="w-full h-40 object-cover"
                       onError={(e) => {
@@ -177,7 +177,7 @@ export default function PropertyComparison({ properties, onClose }) {
                   <th key={property._id} className="p-4 bg-slate-50 dark:bg-slate-900 border-b-2 border-slate-200 dark:border-slate-700 min-w-[250px]">
                     <div className="text-left">
                       <img
-                        src={`http://localhost:5000${property.mainImage || property.images?.[0] || ''}`}
+                        src={`${API_URL}${property.mainImage || property.images?.[0] || ''}`}
                         alt={property.title}
                         className="w-full h-32 object-cover rounded-lg mb-3"
                         onError={(e) => {

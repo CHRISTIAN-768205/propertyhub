@@ -16,7 +16,7 @@ const DeleteAccountSection = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/users/delete-account', {
+      const response = await fetch('${API_URL}/api/users/delete-account', {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

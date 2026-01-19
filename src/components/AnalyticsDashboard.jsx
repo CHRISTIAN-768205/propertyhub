@@ -23,7 +23,7 @@ const AnalyticsDashboard = ({ propertyId, onClose }) => {
   const fetchPropertyAnalytics = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/analytics/property/${propertyId}`, {
+      const response = await fetch(`${API_URL}/api/analytics/property/${propertyId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -38,7 +38,7 @@ const AnalyticsDashboard = ({ propertyId, onClose }) => {
   const fetchOverview = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/analytics/overview', {
+      const response = await fetch('${API_URL}/api/analytics/overview', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();

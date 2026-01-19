@@ -76,7 +76,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   const fetchAnalytics = async () => {
   try {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:5000/api/analytics/landlord/properties', {
+    const response = await fetch('${API_URL}/api/analytics/landlord/properties', {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     if (response.ok) {
@@ -105,7 +105,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   try {
     setLoading(true);
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:5000/api/properties/my-properties', {
+    const response = await fetch('${API_URL}/api/properties/my-properties', {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     if (response.ok) {
@@ -126,7 +126,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   const fetchMyBookings = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/bookings/landlord-bookings', {
+      const response = await fetch('${API_URL}/api/bookings/landlord-bookings', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) setBookings(await response.json());
@@ -141,7 +141,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
     try {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user && user.id) {
-        const response = await fetch(`http://localhost:5000/api/reviews/landlord-stats/${user.id}`);
+        const response = await fetch(`${API_URL}/api/reviews/landlord-stats/${user.id}`);
         if (response.ok) setRatings(await response.json());
       }
     } catch (error) {
@@ -194,7 +194,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   const handleApproveBooking = async (bookingId) => {
     if (!window.confirm('Approve this booking request?')) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/bookings/${bookingId}/status`, {
+      const response = await fetch(`${API_URL}/api/bookings/${bookingId}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -214,7 +214,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   const handleRejectBooking = async (bookingId) => {
     if (!window.confirm('Reject this booking request?')) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/bookings/${bookingId}/status`, {
+      const response = await fetch(`${API_URL}/api/bookings/${bookingId}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -236,7 +236,7 @@ const togglePropertyVisibility = async (id) => {
     
     console.log('Toggling visibility for property:', id);
     
-    const response = await fetch(`http://localhost:5000/api/properties/${id}/toggle-visibility`, {
+    const response = await fetch(`${API_URL}/api/properties/${id}/toggle-visibility`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -289,7 +289,7 @@ const togglePropertyVisibility = async (id) => {
       formData.append('bathrooms', newProperty.bathrooms);
       newProperty.images.forEach((image) => formData.append('images', image));
       
-      const response = await fetch('http://localhost:5000/api/properties', {
+      const response = await fetch('${API_URL}/api/properties', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData
@@ -316,7 +316,7 @@ const togglePropertyVisibility = async (id) => {
     if (!window.confirm('Are you sure you want to delete this property?')) return;
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/properties/${id}`, {
+      const response = await fetch(`${API_URL}/api/properties/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -518,7 +518,7 @@ const togglePropertyVisibility = async (id) => {
                     
                     <div key={item.property._id} className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all">
                       <div className="text-2xl font-bold text-slate-400 w-8">#{index + 1}</div>
-                      <img src={`http://localhost:5000${item.property.images?.[0] || '/placeholder.jpg'}`} alt={item.property.title}
+                      <img src={`${API_URL}${item.property.images?.[0] || '/placeholder.jpg'}`} alt={item.property.title}
                         className="w-20 h-20 object-cover rounded-lg"
                         onError={(e) => { e.target.src = 'https://via.placeholder.com/80x80?text=No+Image'; }}
                       />
@@ -712,7 +712,7 @@ const togglePropertyVisibility = async (id) => {
                       <img 
   src={
     property?.images && property.images.length > 0 
-      ? `http://localhost:5000${property.images[0]}` 
+      ? `${API_URL}${property.images[0]}` 
       : 'https://via.placeholder.com/400x300?text=No+Image'
   } 
   alt={property.title || 'Property'}
@@ -989,7 +989,7 @@ function PropertyAnalyticsDetail({ propertyId }) {
 
   const fetchAnalytics = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/analytics/property/${propertyId}`);
+      const response = await fetch(`${API_URL}/api/analytics/property/${propertyId}`);
       if (response.ok) setAnalytics(await response.json());
     } catch (error) {
       console.error('Error fetching analytics:', error);

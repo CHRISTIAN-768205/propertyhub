@@ -138,7 +138,7 @@ export default function PropertyEditModal({ property, onClose, onSuccess }) {
         formDataToSend.append('images', image);
       });
 
-      const response = await fetch(`http://localhost:5000/api/properties/${property._id}`, {
+      const response = await fetch(`${API_URL}/api/properties/${property._id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -189,7 +189,7 @@ export default function PropertyEditModal({ property, onClose, onSuccess }) {
                 {property.images.map((img, index) => (
                   <img
                     key={index}
-                    src={`http://localhost:5000${img}`}
+                    src={`${API_URL}${img}`}
                     alt={`Property ${index + 1}`}
                     className="w-20 h-20 object-cover rounded-lg border-2 border-slate-200"
                     onError={(e) => {

@@ -42,13 +42,13 @@ const SuperAdminDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       
-      const landlordsResponse = await fetch('http://localhost:5000/api/admin/landlords', {
+      const landlordsResponse = await fetch('${API_URL}/api/admin/landlords', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const landlordsData = await landlordsResponse.json();
       setLandlords(landlordsData);
 
-      const statsResponse = await fetch('http://localhost:5000/api/admin/stats', {
+      const statsResponse = await fetch('${API_URL}/api/admin/stats', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const statsData = await statsResponse.json();
@@ -66,7 +66,7 @@ const SuperAdminDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/landlords/${landlordId}/suspend`, {
+      const response = await fetch(`${API_URL}/api/admin/landlords/${landlordId}/suspend`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -83,7 +83,7 @@ const SuperAdminDashboard = () => {
   const handleUnsuspendLandlord = async (landlordId) => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`http://localhost:5000/api/admin/landlords/${landlordId}/unsuspend`, {
+      await fetch(`${API_URL}/api/admin/landlords/${landlordId}/unsuspend`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -97,7 +97,7 @@ const SuperAdminDashboard = () => {
   const handleDeleteLandlord = async () => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`http://localhost:5000/api/admin/landlords/${selectedLandlord._id}`, {
+      await fetch(`${API_URL}/api/admin/landlords/${selectedLandlord._id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
