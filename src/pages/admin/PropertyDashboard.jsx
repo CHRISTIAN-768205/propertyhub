@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_URL from '../../config/api';
 import { 
   BarChart3, Rocket, Eye, EyeOff, Plus, Edit, Trash2, Home, Calendar, 
   Settings, Star, MapPin, User, Phone, Mail, Camera, LogOut, 
@@ -6,7 +7,9 @@ import {
   Building2, Shirt, UtensilsCrossed, Zap, TrendingUp
 } from 'lucide-react';
 import DeleteAccountSection from '../../components/DeleteAccountSection';
-import PropertyEditModal from './Propertyeditmodal';  // Adjust path as needed
+import API_URL from '../../config/api';
+import PropertyEditModal from './Propertyeditmodal';
+import API_URL from '../../config/api';  // Adjust path as needed
 
 export default function PropertyDashboard() {
   // ALL STATE
@@ -1035,3 +1038,4 @@ function PropertyAnalyticsDetail({ propertyId }) {
     </div>
   );
 }
+

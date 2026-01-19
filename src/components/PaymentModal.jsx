@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import API_URL from '../config/api';
 import { CreditCard, Smartphone, AlertCircle, CheckCircle } from 'lucide-react';
+import API_URL from '../config/api';
 
 export default function PaymentModal({ booking, onClose, onPaymentComplete }) {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -254,3 +256,4 @@ export default function PaymentModal({ booking, onClose, onPaymentComplete }) {
     </div>
   );
 }
+

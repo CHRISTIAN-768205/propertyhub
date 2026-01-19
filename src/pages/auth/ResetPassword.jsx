@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import API_URL from '../../config/api';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import API_URL from '../../config/api';
 import { Lock, Eye, EyeOff, CheckCircle, AlertTriangle } from 'lucide-react';
+import API_URL from '../../config/api';
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();
@@ -318,3 +321,4 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
+
