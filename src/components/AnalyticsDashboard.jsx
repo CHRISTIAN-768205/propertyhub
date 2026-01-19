@@ -38,7 +38,7 @@ const AnalyticsDashboard = ({ propertyId, onClose }) => {
   const fetchOverview = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('${API_URL}/api/analytics/overview', {
+      const response = await fetch(`${API_URL}/api/analytics/overview`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -371,3 +371,4 @@ const OverviewAnalytics = ({ overview }) => {
 };
 
 export default AnalyticsDashboard;
+

@@ -93,7 +93,7 @@ export default function AuthPages() {
     setErrors({});
 
     try {
-     const API_URL = process.env.REACT_APP_API_URL || '${API_URL}';
+     const API_URL = process.env.REACT_APP_API_URL || `${API_URL}`;
 
 const endpoint = isLogin 
   ? `${API_URL}/api/auth/login` 
@@ -166,7 +166,7 @@ const endpoint = isLogin
     setLoading(true);
     
     try {
-      const response = await fetch('${API_URL}/api/auth/forgot-password', {
+      const response = await fetch(`${API_URL}/api/auth/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -571,3 +571,4 @@ const endpoint = isLogin
     </div>
   );
 }
+

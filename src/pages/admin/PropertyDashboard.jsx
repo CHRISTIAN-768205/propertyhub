@@ -77,7 +77,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   const fetchAnalytics = async () => {
   try {
     const token = localStorage.getItem('token');
-    const response = await fetch('${API_URL}/api/analytics/landlord/properties', {
+    const response = await fetch(`${API_URL}/api/analytics/landlord/properties`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     if (response.ok) {
@@ -106,7 +106,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   try {
     setLoading(true);
     const token = localStorage.getItem('token');
-    const response = await fetch('${API_URL}/api/properties/my-properties', {
+    const response = await fetch(`${API_URL}/api/properties/my-properties`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     if (response.ok) {
@@ -127,7 +127,7 @@ const [propertyToEdit, setPropertyToEdit] = useState(null);
   const fetchMyBookings = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('${API_URL}/api/bookings/landlord-bookings', {
+      const response = await fetch(`${API_URL}/api/bookings/landlord-bookings`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) setBookings(await response.json());
@@ -290,7 +290,7 @@ const togglePropertyVisibility = async (id) => {
       formData.append('bathrooms', newProperty.bathrooms);
       newProperty.images.forEach((image) => formData.append('images', image));
       
-      const response = await fetch('${API_URL}/api/properties', {
+      const response = await fetch(`${API_URL}/api/properties`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData
@@ -1036,5 +1036,6 @@ function PropertyAnalyticsDetail({ propertyId }) {
     </div>
   );
 }
+
 
 

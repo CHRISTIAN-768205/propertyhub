@@ -104,7 +104,7 @@ const [currentBooking, setCurrentBooking] = useState(null);
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch('${API_URL}/api/properties');
+      const response = await fetch(`${API_URL}/api/properties`);
       const data = await response.json();
       setProperties(data);
     } catch (error) {
@@ -185,7 +185,7 @@ const [currentBooking, setCurrentBooking] = useState(null);
     e.preventDefault();
     
     try {
-      const response = await fetch('${API_URL}/api/bookings', {
+      const response = await fetch(`${API_URL}/api/bookings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -845,5 +845,6 @@ const [currentBooking, setCurrentBooking] = useState(null);
 
   );
 }
+
 
 

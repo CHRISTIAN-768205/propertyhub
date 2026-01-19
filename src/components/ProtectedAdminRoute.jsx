@@ -22,7 +22,7 @@ const ProtectedAdminRoute = ({ children }) => {
 
     // Verify token with backend
     try {
-      const response = await fetch('${API_URL}/api/admin/verify', {
+      const response = await fetch(`${API_URL}/api/admin/verify`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -60,3 +60,4 @@ const ProtectedAdminRoute = ({ children }) => {
 };
 
 export default ProtectedAdminRoute;
+

@@ -43,13 +43,13 @@ const SuperAdminDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       
-      const landlordsResponse = await fetch('${API_URL}/api/admin/landlords', {
+      const landlordsResponse = await fetch(`${API_URL}/api/admin/landlords`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const landlordsData = await landlordsResponse.json();
       setLandlords(landlordsData);
 
-      const statsResponse = await fetch('${API_URL}/api/admin/stats', {
+      const statsResponse = await fetch(`${API_URL}/api/admin/stats`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const statsData = await statsResponse.json();
@@ -353,4 +353,5 @@ const SuperAdminDashboard = () => {
 };
 
 export default SuperAdminDashboard;
+
 

@@ -28,7 +28,7 @@ export default function Footer() {
     setMessage('');
     
     try {
-      const response = await fetch('${API_URL}/api/newsletter/subscribe', {
+      const response = await fetch(`${API_URL}/api/newsletter/subscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -215,3 +215,4 @@ export default function Footer() {
     </footer>
   );
 }
+
